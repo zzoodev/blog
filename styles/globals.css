@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;800;900&display=swap"); */
+
+body {
+  @apply bg-white  text-[#10172A] dark:text-[#CBD5E1] dark:bg-[#18181B] font-base;
+  /* font-family: "Roboto", sans-serif; */
+}
+
+.html {
+  @apply flex flex-col space-y-5;
+}
+.html pre {
+  @apply bg-gray-200 dark:bg-zinc-800 rounded-md p-5 overflow-y-auto;
+}
+.html pre code {
+  @apply text-gray-800 dark:text-zinc-200  text-sm leading-6;
+}
+.html ol {
+  @apply list-disc;
+}
+.html p {
+  font-weight: 100 !important;
+}

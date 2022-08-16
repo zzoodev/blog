@@ -1,40 +1,41 @@
+import { readdirSync, readFileSync } from "fs";
+import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { useState } from "react";
-import Layout from "../../../../components/layout";
-import { Categories } from "../../../../meta/nav";
-import { cls } from "../../../../utils";
+import Layout from "../../../components/layout";
+import SideNav from "../../../components/sideNav";
 
-const Category: NextPage = () => {
-  const [show, setShow] = useState("");
-  const onClick = (event: any) => {
-    setShow(event.target.id);
-  };
+interface Post {
+  title: string;
+  category: string;
+  subCategory: string;
+  description: string;
+  date: Date;
+  slug: string;
+}
+interface PostsProps {
+  posts: Post[];
+}
 
+const Category: NextPage<PostsProps> = ({ posts }) => {
   return (
     <Layout>
-      <h1>subCategory</h1>
-      <aside className="flex flex-col">
-        {/* {Categories.map((category, i) => (
-          <div className="grop" key={i}>
-            <span id={category.title} onClick={onClick}>
-              {category.title}
-            </span>
-            <ul
-              className={cls(
-                show === category.title ? "flex" : "hidden",
-                "flex-col text-red-400"
-              )}
+      <div className="flex">
+        <SideNav />
+        <main className="w-[85%] h-max justify-end">
+          {posts.map((post, i) => (
+            <Link
+              key={i}
+              href={`/blog/${post.category}/${post.subCategory}/${post.slug}`}
             >
-              {category.subCategories.map((subCategory) => (
-                <Link href={`/blog${category.path}${subCategory.path}`}>
-                  {subCategory.title}
-                </Link>
-              ))}
-            </ul>
-          </div>
-        ))} */}
-      </aside>
+              <div>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+              </div>
+            </Link>
+          ))}
+        </main>
+      </div>
     </Layout>
   );
 };
@@ -42,14 +43,26 @@ const Category: NextPage = () => {
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "bloking",
+    fallback: "blocking",
   };
 }
-export async function getStaticProps(context: GetStaticProps) {
-  console.log(context);
+export const getStaticProps: GetStaticProps = (ctx) => {
+  console.log(ctx);
+  const posts = readdirSync(`./posts`).map((item) => {
+    const post = readFileSync(`./posts/${item}`, "utf-8");
+    const [slug, _] = item.split(".");
+    return { ...matter(post).data, slug };
+  });
+  const filtered = posts.filter(
+    (post: any) =>
+      post?.category === ctx?.params?.category &&
+      post?.subCategory === ctx?.params?.subCategory
+  );
   return {
-    props: {},
+    props: {
+      posts: JSON.parse(JSON.stringify(filtered)),
+    },
   };
-}
+};
 
 export default Category;

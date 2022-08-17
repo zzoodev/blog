@@ -4,6 +4,7 @@ category: golang
 subCategory: basic
 description: go언어를 찍어먹어보자
 date: 2022-08-16
+thumnail: /images/cat.jpg
 ---
 
 # Go 언어 탐방기
@@ -11,6 +12,8 @@ date: 2022-08-16
 1. 안녕하세요
 2. 감사해요
 3. 잘있어요
+
+![Tux, the Linux mascot](/images/cat.jpg)
 
 ---
 

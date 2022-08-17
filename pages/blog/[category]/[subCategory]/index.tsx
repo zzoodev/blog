@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import Layout from "../../../components/layout";
+import Post from "../../../components/post";
 import SideNav from "../../../components/sideNav";
 
 interface Post {
@@ -10,8 +11,9 @@ interface Post {
   category: string;
   subCategory: string;
   description: string;
-  date: Date;
+  date: string;
   slug: string;
+  thumnail: string;
 }
 interface PostsProps {
   posts: Post[];
@@ -20,19 +22,13 @@ interface PostsProps {
 const Category: NextPage<PostsProps> = ({ posts }) => {
   return (
     <Layout>
-      <div className="flex">
+      <div className="flex w-full justify-end">
         <SideNav />
-        <main className="w-[85%] h-max justify-end">
+        <main className="w-[85%] h-max p-6">
           {posts.map((post, i) => (
-            <Link
-              key={i}
-              href={`/blog/${post.category}/${post.subCategory}/${post.slug}`}
-            >
-              <div>
-                <h3>{post.title}</h3>
-                <p>{post.description}</p>
-              </div>
-            </Link>
+            <div key={i}>
+              <Post post={post}></Post>
+            </div>
           ))}
         </main>
       </div>

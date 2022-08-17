@@ -2,8 +2,8 @@ import { readdirSync, readFileSync } from "fs";
 import type { GetStaticProps, NextPage } from "next";
 import Layout from "./components/layout";
 import matter from "gray-matter";
-import Link from "next/link";
 import React, { useState } from "react";
+import Post from "./components/post";
 
 interface Post {
   category: string;
@@ -52,22 +52,9 @@ const Home: NextPage<PostsProps> = ({ posts }) => {
 
       <div className="flex flex-col mt-12">
         {allPost.map((post, i) => (
-          <Link
-            key={i}
-            href={`/blog/${post.category}/${post.subCategory}/${post.slug}`}
-          >
-            <div className="w-full h-32">
-              <h2 className="font-extrabold text-xl cursor-pointer">
-                {post.title}
-              </h2>
-              <p className="font-thin text-xs mt-3 cursor-pointer">
-                {post.description}
-              </p>
-              <span className="font-thin text-xs text-zinc-500">
-                {post.date.slice(0, 10)}
-              </span>
-            </div>
-          </Link>
+          <div key={i}>
+            <Post post={post}></Post>
+          </div>
         ))}
       </div>
     </Layout>

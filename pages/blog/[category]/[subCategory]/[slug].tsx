@@ -20,10 +20,9 @@ interface PostProps {
 const Category: NextPage<PostProps> = ({ data, content }) => {
   return (
     <Layout>
-      <h1 className="text-center">subCategory</h1>
-      <div className="flex">
+      <div className="flex w-full justify-end">
         <SideNav />
-        <main className="w-[85%] h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7 justify-end">
+        <main className="w-[85%] h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
           <h2 className="text-3xl font-black mb-6">{data.title}</h2>
           <div
             className="html text-[16px]"

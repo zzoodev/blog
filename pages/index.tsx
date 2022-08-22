@@ -26,12 +26,13 @@ const Home: NextPage<PostsProps> = ({ posts }) => {
     setAllPost(
       posts.filter(
         (post) =>
-          post.title.includes(value) ||
-          post.description.includes(value) ||
-          post.subCategory.includes(value)
+          post?.title?.includes(value) ||
+          post?.description?.includes(value) ||
+          post?.subCategory?.includes(value)
       )
     );
   };
+
   return (
     <Layout>
       <form className="relative w-full h-10 mt-12">

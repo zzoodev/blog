@@ -24,3 +24,10 @@ body {
 .html p {
   font-weight: 100 !important;
 }
+.html img {
+  width: 100%;
+  height: max-content;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}

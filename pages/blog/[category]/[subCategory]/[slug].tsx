@@ -48,8 +48,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .use(remarkHtml)
     .process(content);
 
-  console.log(data);
-
   return {
     props: {
       data: JSON.parse(JSON.stringify(data)),

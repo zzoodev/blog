@@ -11,26 +11,26 @@ export const NavLink: Nav[] = [
 export const Categories = [
   {
     title: "Go",
-    path: "/golang",
+    path: "golang",
     subCategories: [
-      { title: "basic", path: "/basic" },
-      { title: "expert", path: "/expert" },
+      { title: "basic", path: "basic" },
+      { title: "expert", path: "expert" },
     ],
   },
   {
     title: "Javascript",
-    path: "/javascript",
+    path: "javascript",
     subCategories: [
-      { title: "basic", path: "/basic" },
-      { title: "expert", path: "/expert" },
+      { title: "basic", path: "basic" },
+      { title: "expert", path: "expert" },
     ],
   },
   {
     title: "Math",
-    path: "/math",
+    path: "math",
     subCategories: [
-      { title: "basic", path: "/basic" },
-      { title: "expert", path: "/expert" },
+      { title: "basic", path: "basic" },
+      { title: "expert", path: "expert" },
     ],
   },
 ];

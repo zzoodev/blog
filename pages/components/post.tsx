@@ -4,13 +4,13 @@ import React from "react";
 
 interface PostProps {
   post: {
+    title: string;
     category: string;
     subCategory: string;
     date: string;
     description: string;
     slug: string;
-    title: string;
-    thumnail: string;
+    thumnail?: string;
   };
 }
 
@@ -26,7 +26,7 @@ const Post: NextPage<PostProps> = ({ post }) => {
             {post.description}
           </p>
           <span className="font-thin text-xs text-zinc-500">
-            {post.date.slice(0, 10)}
+            {post.date?.slice(0, 10)}
           </span>
         </div>
         {post.thumnail ? (

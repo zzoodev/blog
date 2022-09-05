@@ -18,7 +18,7 @@ const SideNav: NextPage = () => {
   }, [router, setShow]);
 
   return (
-    <aside className="fixed left-[calc(50%-336px)] top-14 w-[90px]  min-h-[500px] h-max border-r border-r-zinc-700 pt-2 space-y-2">
+    <aside className="fixed left-[calc(50%-336px)] top-14 w-[90px]  min-h-screen h-max border-r border-r-zinc-700 pt-2 space-y-2">
       {Categories.map((category, i) => (
         <div key={i}>
           <span

@@ -23,7 +23,7 @@ const Layout: NextPage<LayoutProps> = ({ children }) => {
             <div
               key={i}
               className={cls(
-                router.pathname.slice(1) === link.path ? "text-cyan-400" : "",
+                router.pathname === link.path ? "text-cyan-400" : "",
                 "flex justify-center items-center h-full font-thin text-[14px] uppercase"
               )}
             >

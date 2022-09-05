@@ -4,7 +4,7 @@ category: golang
 subCategory: basic
 description: go언어를 찍어먹어보자
 date: 2022-08-16
-thumnail: /images/cat.jpg
+thumnail: /images/posts/cat.jpg
 ---
 
 # Go 언어 탐방기
@@ -13,7 +13,7 @@ thumnail: /images/cat.jpg
 2. 감사해요
 3. 잘있어요
 
-![Tux, the Linux mascot](/images/cat.jpg)
+![Tux, the Linux mascot](/images/posts/cat.jpg)
 
 ---
 

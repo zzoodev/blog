@@ -8,12 +8,12 @@ const Resume: NextPage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col bg-white min-h-screen w-full text-slate-700 py-6 px-4">
-        <span className="font-bold text-xl">{name}</span>
-        <span className="mt-2">{job}</span>
+      <div className="flex flex-col bg-white min-h-screen w-full text-slate-700 p-6">
+        <span className="font-bold text-2xl mt-2">{name}</span>
+        <span className="mt-4">{job}</span>
         <span className="text-xs mt-1">{contact}</span>
-        <p className="mt-4 text-slate-500 text-sm">{about}</p>
-        <hr className="mt-3" />
+        <p className="my-6 text-slate-500 text-sm">{about}</p>
+        <hr />
         <div className="mt-6">
           <h3 className="text-xl font-bold text-slate-700 -mb-4">Experience</h3>
           {experience.map((exp, i) => (
@@ -29,7 +29,7 @@ const Resume: NextPage = () => {
                 {exp.content.map((content, i) => (
                   <div
                     key={i}
-                    className="mt-2 border border-slate-400 p-2 rounded-sm"
+                    className="mt-3 border border-slate-200 py-3 px-4 rounded-sm"
                   >
                     <span className="font-bold text-md block">
                       {content.title}
@@ -37,20 +37,21 @@ const Resume: NextPage = () => {
                     <p className="text-[11px] text-slate-500">
                       {content.description}
                     </p>
-                    <div className="flex flex-col mt-2 ml-1 text-sm text-slate-700">
+                    <div className="flex flex-col mt-4 ml-1 text-sm text-slate-700">
                       {content.do.map((iDid, i) => (
                         <span key={i}>- {iDid}</span>
                       ))}
                     </div>
-                    <div className="flex text-slate-500 text-xs mt-1">
+                    <div className="flex text-slate-500 text-xs mt-4">
                       {content.tech.map((stack, i) => (
                         <span key={i} className="mr-2">
                           {stack}
+                          {i === content.tech.length - 1 ? "" : ","}
                         </span>
                       ))}
                     </div>
                     <Link href={content.link}>
-                      <a className="text-xs text-cyan-500">
+                      <a className="text-xs text-cyan-500 mt-2 block">
                         링크@ {content.link}
                       </a>
                     </Link>

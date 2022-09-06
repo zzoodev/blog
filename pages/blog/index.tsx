@@ -6,6 +6,7 @@ const Blog: NextPage = () => {
   return (
     <Layout>
       <SideNav />
+      <h1>Blog</h1>
     </Layout>
   );
 };

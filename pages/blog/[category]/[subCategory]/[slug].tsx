@@ -22,7 +22,7 @@ const Category: NextPage<PostProps> = ({ data, content }) => {
     <Layout>
       <div className="flex w-full justify-end">
         <SideNav />
-        <main className="w-[85%] h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
+        <main className="base:w-[78%] w-full h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
           <h2 className="text-3xl font-black mb-6">{data.title}</h2>
           <div
             className="html text-[16px]"

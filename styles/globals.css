@@ -21,15 +21,14 @@
   @apply text-gray-800 dark:text-zinc-200  text-sm leading-6;
 }
 .html ol {
-  @apply list-disc;
+  @apply list-disc ml-5;
 }
 .html p {
   font-weight: 100 !important;
 }
 .html img {
   width: 100%;
-  height: max-content;
-  max-height: 400px;
+  aspect-ratio: inherit;
   object-fit: cover;
   border-radius: 4px;
 }

@@ -10,6 +10,10 @@ module.exports = {
         base: ["Roboto", "Noto Sans KR", "sans-serif"],
       },
     },
+    screens: {
+      mobile: "480px",
+      base: "672px",
+    },
   },
   plugins: [],
 };

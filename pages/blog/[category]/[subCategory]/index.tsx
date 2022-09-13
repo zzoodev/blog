@@ -1,7 +1,6 @@
 import { readdirSync, readFileSync } from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
-import Link from "next/link";
 import Layout from "../../../components/layout";
 import Post from "../../../components/post";
 import SideNav from "../../../components/sideNav";
@@ -40,7 +39,7 @@ const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
+    fallback: true,
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {

@@ -16,7 +16,10 @@ interface PostProps {
     date: Date;
   };
   content: string;
-  customMeta: any;
+  customMeta: CustomMeta;
+}
+interface CustomMeta {
+  [key: string]: any;
 }
 
 const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {

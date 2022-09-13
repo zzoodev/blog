@@ -1,7 +1,6 @@
 import { readdirSync, readFileSync } from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
-import path from "path";
 import { Categories } from "../../../../meta/nav";
 import Layout from "../../../components/layout";
 import Post from "../../../components/post";
@@ -16,11 +15,15 @@ interface Post {
   slug: string;
   thumnail: string;
 }
+interface CustomMeta {
+  [key: string]: any;
+}
 interface PostsProps {
   posts: Post[];
+  customMeta: CustomMeta;
 }
 
-const Category: NextPage<PostsProps> = ({ posts }) => {
+const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
   return (
     <Layout>
       <div className="flex w-full justify-end">
@@ -47,22 +50,12 @@ export async function getStaticPaths() {
     });
   });
 
-  // const posts: any = readdirSync(`./posts`).map((item) => {
-  //   const post = readFileSync(`./posts/${item}`, "utf-8");
-  //   const [slug, _] = item.split(".");
-  //   return { ...matter(post).data, slug };
-  // });
-
-  // const paths = posts.map((post: any) => ({
-  //   params: { category: post?.category, subCategory: post?.subCategory },
-  // }));
-
   return {
     paths,
     fallback: "blocking",
   };
 }
-export const getStaticProps: GetStaticProps = (ctx) => {
+export const getStaticProps: GetStaticProps = ({ params }) => {
   const posts = readdirSync(`./posts`).map((item) => {
     const post = readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
@@ -70,12 +63,16 @@ export const getStaticProps: GetStaticProps = (ctx) => {
   });
   const filtered = posts.filter(
     (post: any) =>
-      post?.category === ctx?.params?.category &&
-      post?.subCategory === ctx?.params?.subCategory
+      post?.category === params?.category &&
+      post?.subCategory === params?.subCategory
   );
+  const customMeta = {
+    title: `Blog | ${params?.category} | ${params?.subCategory}`,
+  };
   return {
     props: {
       posts: JSON.parse(JSON.stringify(filtered)),
+      customMeta,
     },
   };
 };

@@ -1,11 +1,11 @@
 import { readdirSync, readFileSync } from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
+import path from "path";
+import { Categories } from "../../../../meta/nav";
 import Layout from "../../../components/layout";
 import Post from "../../../components/post";
 import SideNav from "../../../components/sideNav";
-import fs from "fs";
-import path from "path";
 
 interface Post {
   title: string;
@@ -38,24 +38,33 @@ const Category: NextPage<PostsProps> = ({ posts }) => {
 };
 
 export async function getStaticPaths() {
-  const posts: any = fs.readdirSync(`./posts`).map((item) => {
-    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
-    const [slug, _] = item.split(".");
-    return { ...matter(post).data, slug };
+  const paths: any = [];
+  Categories.forEach((obj) => {
+    const category = obj.path;
+    obj.subCategories.forEach((sub) => {
+      const path = { params: { category, subCategory: sub.path } };
+      paths.push(path);
+    });
   });
 
-  const paths = posts.map((post: any) => ({
-    params: { category: post?.category, subCategory: post?.subCategory },
-  }));
+  // const posts: any = readdirSync(`./posts`).map((item) => {
+  //   const post = readFileSync(`./posts/${item}`, "utf-8");
+  //   const [slug, _] = item.split(".");
+  //   return { ...matter(post).data, slug };
+  // });
+
+  // const paths = posts.map((post: any) => ({
+  //   params: { category: post?.category, subCategory: post?.subCategory },
+  // }));
 
   return {
-    paths: paths,
+    paths,
     fallback: "blocking",
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {
-  const posts = fs.readdirSync(`./posts`).map((item) => {
-    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
+  const posts = readdirSync(`./posts`).map((item) => {
+    const post = readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

@@ -5,8 +5,7 @@ import remarkParse from "remark-parse";
 import { unified } from "unified";
 import Layout from "../../../components/layout";
 import SideNav from "../../../components/sideNav";
-import fs from "fs";
-import path from "path";
+import { readdirSync, readFileSync } from "fs";
 
 interface PostProps {
   data: {
@@ -38,8 +37,8 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
 };
 
 export async function getStaticPaths() {
-  const posts: any = fs.readdirSync(`./posts`).map((item) => {
-    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
+  const posts: any = readdirSync(`./posts`).map((item) => {
+    const post = readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

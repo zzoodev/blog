@@ -38,11 +38,11 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: true,
+    fallback: "blocking",
   };
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data, content } = matter.read(`posts/${params?.slug}.md`);
+  const { data, content } = matter.read(`./posts/${params?.slug}.md`);
 
   const { value } = await unified()
     .use(remarkParse)

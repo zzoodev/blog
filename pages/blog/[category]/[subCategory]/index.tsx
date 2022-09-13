@@ -18,16 +18,15 @@ interface Post {
 }
 interface PostsProps {
   posts: Post[];
-  customMeta: any;
 }
 
-const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
+const Category: NextPage<PostsProps> = ({ posts }) => {
   return (
-    <Layout customMeta={customMeta}>
+    <Layout>
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[82%] w-full h-max p-6">
-          {posts?.map((post, i) => (
+          {posts.map((post, i) => (
             <div key={i}>
               <Post post={post}></Post>
             </div>
@@ -45,8 +44,8 @@ export async function getStaticPaths() {
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {
-  const posts = fs.readdirSync(`./posts`).map((item) => {
-    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
+  const posts = readdirSync(`./posts`).map((item) => {
+    const post = readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });
@@ -55,13 +54,9 @@ export const getStaticProps: GetStaticProps = (ctx) => {
       post?.category === ctx?.params?.category &&
       post?.subCategory === ctx?.params?.subCategory
   );
-  const customMeta = {
-    title: `Blog | ${ctx?.params?.category}`,
-  };
   return {
     props: {
       posts: JSON.parse(JSON.stringify(filtered)),
-      customMeta,
     },
   };
 };

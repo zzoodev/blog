@@ -5,6 +5,8 @@ import remarkParse from "remark-parse";
 import { unified } from "unified";
 import Layout from "../../../components/layout";
 import SideNav from "../../../components/sideNav";
+import fs from "fs";
+import path from "path";
 
 interface PostProps {
   data: {

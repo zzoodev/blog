@@ -15,10 +15,10 @@ const Blog: NextPage = () => {
   );
 };
 
-export async function getStaticProps(context: GetStaticProps) {
-  return {
-    props: {},
-  };
-}
+// export async function getStaticProps(context: GetStaticProps) {
+//   return {
+//     props: {},
+//   };
+// }
 
 export default Blog;

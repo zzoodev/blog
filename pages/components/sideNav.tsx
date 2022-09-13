@@ -6,7 +6,7 @@ import { Categories } from "../../meta/nav";
 import { cls } from "../../utils";
 import { useMediaQuery } from "react-responsive";
 import { useRecoilState } from "recoil";
-import { burgerState } from "../../atoms";
+import { burgerAtom } from "../../atoms";
 
 const SideNav: NextPage = () => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const SideNav: NextPage = () => {
     setShow(category);
   }, [router, setShow]);
 
-  const [isBurger, setIsBurger] = useRecoilState(burgerState);
+  const [isBurger, setIsBurger] = useRecoilState(burgerAtom);
 
   const max678 = useMediaQuery({
     query: "(max-width: 678px)",

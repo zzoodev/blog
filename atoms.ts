@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const burgerState = atom({
+export const burgerAtom = atom({
   key: "burgerState",
   default: false,
 });

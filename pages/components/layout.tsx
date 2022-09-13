@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { burgerState } from "../../atoms";
+import { burgerAtom } from "../../atoms";
 import { NavLink } from "../../meta/nav";
 import { cls } from "../../utils";
 import { useRecoilState } from "recoil";
@@ -29,7 +29,7 @@ const Layout: NextPage<LayoutProps> = ({ children, customMeta }) => {
     query: "(max-width: 678px)",
   });
 
-  const [isOpenBurger, setIsOpenBurger] = useRecoilState(burgerState);
+  const [isOpenBurger, setIsOpenBurger] = useRecoilState(burgerAtom);
 
   const meta = {
     title: metadata.title,

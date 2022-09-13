@@ -25,7 +25,7 @@ const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[82%] w-full h-max p-6">
-          {posts.map((post, i) => (
+          {posts?.map((post, i) => (
             <div key={i}>
               <Post post={post}></Post>
             </div>

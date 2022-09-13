@@ -8,12 +8,21 @@ import { NavLink } from "../../meta/nav";
 import { cls } from "../../utils";
 import { useRecoilState } from "recoil";
 import SideNav from "./sideNav";
+import Head from "next/head";
+import metadata from "../../meta/metadata";
 
+interface CustomMeta {
+  title?: string;
+  description?: string;
+  author?: string;
+  [key: string]: any;
+}
 interface LayoutProps {
   children: React.ReactNode;
+  customMeta?: CustomMeta;
 }
 
-const Layout: NextPage<LayoutProps> = ({ children }) => {
+const Layout: NextPage<LayoutProps> = ({ children, customMeta }) => {
   const router = useRouter();
 
   const max678 = useMediaQuery({
@@ -21,6 +30,13 @@ const Layout: NextPage<LayoutProps> = ({ children }) => {
   });
 
   const [isOpenBurger, setIsOpenBurger] = useRecoilState(burgerState);
+
+  const meta = {
+    title: metadata.title,
+    description: metadata.description,
+    author: metadata.author,
+    ...customMeta,
+  };
 
   return (
     <div
@@ -56,6 +72,11 @@ const Layout: NextPage<LayoutProps> = ({ children }) => {
         </nav>
       </header>
       <div className="w-full min-h-screen">{children}</div>
+      <Head>
+        <title>{meta.title}</title>
+        <meta content={meta.description} name="description" />
+        <meta property="og:site_name" content={meta.author} />
+      </Head>
     </div>
   );
 };

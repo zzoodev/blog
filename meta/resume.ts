@@ -21,7 +21,7 @@ interface Content {
 
 export const resume: Resume = {
   name: "주영석",
-  job: "Frontend Developer",
+  job: "Publisher && Frontend Developer",
   contact: "csbt1033@gmail.com",
   about:
     "안녕하세요. 프론트엔드 개발자 주영석입니다. 문제가 생기면 빠르게 무슨문제인지 파악하고 해결하는것을 즐기며 어렵고 힘든일을 남들보다 꾸준하게 오래지속하는 힘을 가지고 있습니다.",

@@ -4,8 +4,12 @@ import { projects } from "../meta/projects";
 import Link from "next/link";
 
 const Project: NextPage = () => {
+  const customMeta = {
+    title: "Blog | Project",
+    description: "사이드 프로젝트 모음",
+  };
   return (
-    <Layout>
+    <Layout customMeta={customMeta}>
       <h1 className="mt-4 font-black text-3xl ml-3">Projects</h1>
       <h2 className="mt-3 font-light text-sm ml-3">
         끄적끄적 만든것들을 기록합니다.

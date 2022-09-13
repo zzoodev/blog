@@ -6,8 +6,13 @@ import Link from "next/link";
 const Resume: NextPage = () => {
   const { name, about, job, contact, experience } = resume;
 
+  const customMeta = {
+    title: "Blog | Resume",
+    description: "zzoo의 이력서",
+  };
+
   return (
-    <Layout>
+    <Layout customMeta={customMeta}>
       <div className="flex flex-col bg-white min-h-screen w-full text-slate-700 p-6">
         <span className="font-bold text-2xl mt-2">{name}</span>
         <span className="mt-4">{job}</span>

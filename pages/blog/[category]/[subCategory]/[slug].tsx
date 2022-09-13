@@ -15,11 +15,12 @@ interface PostProps {
     date: Date;
   };
   content: string;
+  customMeta: any;
 }
 
-const Category: NextPage<PostProps> = ({ data, content }) => {
+const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
   return (
-    <Layout>
+    <Layout customMeta={customMeta}>
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[78%] w-full h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
@@ -48,10 +49,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .use(remarkHtml)
     .process(content);
 
+  console.log(params);
+
+  const customMeta = {
+    title: `Blog | ${params?.category} | ${params?.slug}`,
+  };
+
   return {
     props: {
       data: JSON.parse(JSON.stringify(data)),
       content: value,
+      customMeta,
     },
   };
 };

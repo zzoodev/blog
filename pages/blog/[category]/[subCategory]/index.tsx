@@ -17,11 +17,12 @@ interface Post {
 }
 interface PostsProps {
   posts: Post[];
+  customMeta: any;
 }
 
-const Category: NextPage<PostsProps> = ({ posts }) => {
+const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
   return (
-    <Layout>
+    <Layout customMeta={customMeta}>
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[82%] w-full h-max p-6">
@@ -53,9 +54,13 @@ export const getStaticProps: GetStaticProps = (ctx) => {
       post?.category === ctx?.params?.category &&
       post?.subCategory === ctx?.params?.subCategory
   );
+  const customMeta = {
+    title: `Blog | ${ctx?.params?.category}`,
+  };
   return {
     props: {
       posts: JSON.parse(JSON.stringify(filtered)),
+      customMeta,
     },
   };
 };

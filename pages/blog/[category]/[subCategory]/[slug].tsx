@@ -38,11 +38,26 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
 };
 
 export async function getStaticPaths() {
+  const posts: any = fs.readdirSync(`./posts`).map((item) => {
+    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
+    const [slug, _] = item.split(".");
+    return { ...matter(post).data, slug };
+  });
+
+  const paths = posts.map((post: any) => ({
+    params: {
+      category: post?.category,
+      subCategory: post?.subCategory,
+      slug: post?.slug,
+    },
+  }));
+
   return {
-    paths: [],
+    paths: paths,
     fallback: "blocking",
   };
 }
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data, content } = matter.read(`./posts/${params?.slug}.md`);
 

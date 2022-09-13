@@ -38,14 +38,24 @@ const Category: NextPage<PostsProps> = ({ posts }) => {
 };
 
 export async function getStaticPaths() {
+  const posts: any = fs.readdirSync(`./posts`).map((item) => {
+    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
+    const [slug, _] = item.split(".");
+    return { ...matter(post).data, slug };
+  });
+
+  const paths = posts.map((post: any) => ({
+    params: { category: post?.category, subCategory: post?.subCategory },
+  }));
+
   return {
-    paths: [],
+    paths: paths,
     fallback: "blocking",
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {
-  const posts = readdirSync(`./posts`).map((item) => {
-    const post = readFileSync(`./posts/${item}`, "utf-8");
+  const posts = fs.readdirSync(`./posts`).map((item) => {
+    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

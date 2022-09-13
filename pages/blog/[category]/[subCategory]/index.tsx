@@ -43,8 +43,8 @@ export async function getStaticPaths() {
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {
-  const posts = readdirSync(`./posts`).map((item) => {
-    const post = readFileSync(`./posts/${item}`, "utf-8");
+  const posts = readdirSync(`/posts`).map((item) => {
+    const post = readFileSync(`/posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

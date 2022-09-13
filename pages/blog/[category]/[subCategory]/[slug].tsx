@@ -49,8 +49,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .use(remarkHtml)
     .process(content);
 
-  console.log(params);
-
   const customMeta = {
     title: `Blog | ${params?.category} | ${params?.slug}`,
   };

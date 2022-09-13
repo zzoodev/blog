@@ -4,6 +4,8 @@ import { GetStaticProps, NextPage } from "next";
 import Layout from "../../../components/layout";
 import Post from "../../../components/post";
 import SideNav from "../../../components/sideNav";
+import fs from "fs";
+import path from "path";
 
 interface Post {
   title: string;
@@ -43,8 +45,8 @@ export async function getStaticPaths() {
   };
 }
 export const getStaticProps: GetStaticProps = (ctx) => {
-  const posts = readdirSync(`./posts`).map((item) => {
-    const post = readFileSync(`./posts/${item}`, "utf-8");
+  const posts = fs.readdirSync(`./posts`).map((item) => {
+    const post = fs.readFileSync(`./posts/${item}`, "utf-8");
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

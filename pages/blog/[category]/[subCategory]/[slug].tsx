@@ -42,7 +42,7 @@ export async function getStaticPaths() {
   };
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data, content } = matter.read(`/posts/${params?.slug}.md`);
+  const { data, content } = matter.read(`./posts/${params?.slug}.md`);
 
   const { value } = await unified()
     .use(remarkParse)

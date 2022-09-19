@@ -1,13 +1,13 @@
 ---
-title: golang
+title: Test
 category: Algorithm
 subCategory: basic
-description: 알고리즘
+description: test
 date: 2022-08-16
 thumnail: /images/posts/cat.jpg
 ---
 
-# Go 언어 탐방기
+# h1 태그
 
 1. 안녕하세요
 2. 감사해요

@@ -50,7 +50,7 @@ export const resume: Resume = {
             "API 연동 담당",
           ],
           tech: ["React", "react-hook-form", "react-router", "recoil"],
-          link: "naver.com",
+          link: "http://112.217.210.162:8080/content1/test/jikji_platform/",
         },
       ],
     },

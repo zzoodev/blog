@@ -21,81 +21,33 @@ interface Content {
 
 export const resume: Resume = {
   name: "주영석",
-  job: "Publisher && Frontend Developer",
+  job: "Publisher && want be Frontend Dev",
   contact: "csbt1033@gmail.com",
-  about:
-    "안녕하세요. 프론트엔드 개발자 주영석입니다. 문제가 생기면 빠르게 무슨문제인지 파악하고 해결하는것을 즐기며 어렵고 힘든일을 남들보다 꾸준하게 오래지속하는 힘을 가지고 있습니다.",
+  about: `콘텐츠 퍼블리싱이 주 업무이지만 웹 프론트엔드 개발을 하고 싶습니다. 고등학교 3학년때 축구를 그만두고 오랜만에 다시 꿈이 생겼습니다. 훌룡한 웹개발자가 되고싶습니다. 컴퓨터를 더 이해하고 싶습니다. 발전하고 싶습니다.`,
   experience: [
     {
       company: "토브소프트",
       position: "Contents Developer",
-      period: "22.02 ~",
+      period: "22.02 ~ 재직중",
       content: [
         {
-          title: "K-Pub",
+          title: "동아 교육컨텐츠 퍼블리싱",
           description: "전자책 플랫폼",
           do: [
-            "폴더 구조 결정",
-            "롤링배너 슬라이더 개발",
-            "fetch를 활용하여 서버와 연결",
+            "수학, 과학 교육 컨텐츠 퍼블리싱",
+            "토글, 선잇기, 드래그 기능 개발",
           ],
-          tech: ["React", "react-hook-form", "react-router", "recoil"],
+          tech: ["javascript", "css", "html"],
           link: "naver.com",
         },
         {
           title: "K-Pub",
           description: "전자책 플랫폼",
           do: [
-            "폴더 구조 결정",
-            "롤링배너 슬라이더 개발",
-            "fetch를 활용하여 서버와 연결",
-          ],
-          tech: ["React", "react-hook-form", "react-router", "recoil"],
-          link: "naver.com",
-        },
-        {
-          title: "K-Pub",
-          description: "전자책 플랫폼",
-          do: [
-            "폴더 구조 결정",
-            "롤링배너 슬라이더 개발",
-            "fetch를 활용하여 서버와 연결",
-          ],
-          tech: ["React", "react-hook-form", "react-router", "recoil"],
-          link: "naver.com",
-        },
-      ],
-    },
-    {
-      company: "토브소프트",
-      position: "Contents Developer",
-      period: "22.02 ~",
-      content: [
-        {
-          title: "K-Pub",
-          description: "전자책 플랫폼",
-          do: [
-            "폴더 구조 결정",
-            "롤링배너 슬라이더 개발",
-            "fetch를 활용하여 서버와 연결",
-          ],
-          tech: ["React", "react-hook-form", "react-router", "recoil"],
-          link: "naver.com",
-        },
-      ],
-    },
-    {
-      company: "토브소프트",
-      position: "Contents Developer",
-      period: "22.02 ~",
-      content: [
-        {
-          title: "K-Pub",
-          description: "전자책 플랫폼",
-          do: [
-            "폴더 구조 결정",
-            "롤링배너 슬라이더 개발",
-            "fetch를 활용하여 서버와 연결",
+            "프로젝트 리더",
+            "메인페이지 개발",
+            "E-book 디테일 페이지 개발",
+            "API 연동 담당",
           ],
           tech: ["React", "react-hook-form", "react-router", "recoil"],
           link: "naver.com",

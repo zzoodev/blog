@@ -15,9 +15,9 @@ const Resume: NextPage = () => {
     <Layout customMeta={customMeta}>
       <div className="flex flex-col bg-white min-h-screen w-full text-slate-700 p-6">
         <span className="font-bold text-2xl mt-2">{name}</span>
-        <span className="mt-4">{job}</span>
+        <span className="mt-4 font-bold">{job}</span>
         <span className="text-xs mt-1">{contact}</span>
-        <p className="my-6 text-slate-500 text-sm">{about}</p>
+        <p className="my-6 text-slate-500 text-xs">{about}</p>
         <hr />
         <div className="mt-6">
           <h3 className="text-xl font-bold text-slate-700 -mb-4">Experience</h3>

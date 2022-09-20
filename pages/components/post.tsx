@@ -32,7 +32,7 @@ const Post: NextPage<PostProps> = ({ post }) => {
         {post?.thumnail ? (
           <img
             src={post?.thumnail}
-            className="h-full aspect-square rounded-md object-cover"
+            className="h-full aspect-square rounded-md object-cover ml-4"
             alt=""
           />
         ) : null}

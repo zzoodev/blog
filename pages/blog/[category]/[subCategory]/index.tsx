@@ -42,13 +42,16 @@ const Category: NextPage<PostsProps> = ({ posts, customMeta }) => {
 
 export async function getStaticPaths() {
   const paths: any = [];
-  Categories.forEach((obj) => {
-    const category = obj.path;
-    obj.subCategories.forEach((sub) => {
-      const path = { params: { category, subCategory: sub.path } };
-      paths.push(path);
+
+  if (Categories) {
+    Categories.forEach((obj) => {
+      const category = obj.path;
+      obj.subCategories.forEach((sub) => {
+        const path = { params: { category, subCategory: sub.path } };
+        paths.push(path);
+      });
     });
-  });
+  }
 
   return {
     paths,

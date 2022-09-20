@@ -9,28 +9,20 @@ export const NavLink: Nav[] = [
   { title: "Resume", path: "/resume" },
 ];
 export const Categories = [
-  // {
-  //   title: "Go",
-  //   path: "golang",
-  //   subCategories: [
-  //     { title: "basic", path: "basic" },
-  //     { title: "expert", path: "expert" },
-  //   ],
-  // },
-  // {
-  //   title: "Javascript",
-  //   path: "javascript",
-  //   subCategories: [
-  //     { title: "basic", path: "basic" },
-  //     { title: "expert", path: "expert" },
-  //   ],
-  // },
-  // {
-  //   title: "Math",
-  //   path: "math",
-  //   subCategories: [
-  //     { title: "basic", path: "basic" },
-  //     { title: "expert", path: "expert" },
-  //   ],
-  // },
+  {
+    title: "Javascript",
+    path: "javascript",
+    subCategories: [
+      { title: "basic", path: "basic" },
+      { title: "expert", path: "expert" },
+    ],
+  },
+  {
+    title: "Algorithm",
+    path: "algorithm",
+    subCategories: [
+      { title: "basic", path: "basic" },
+      { title: "expert", path: "expert" },
+    ],
+  },
 ];

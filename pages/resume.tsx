@@ -55,11 +55,14 @@ const Resume: NextPage = () => {
                         </span>
                       ))}
                     </div>
-                    <Link href={content.link}>
-                      <a className="text-xs text-cyan-500 mt-2 block">
-                        링크@ {content.link}
-                      </a>
-                    </Link>
+
+                    <a
+                      href={content.link}
+                      className="text-xs text-cyan-500 mt-2 block"
+                      target="_blank"
+                    >
+                      링크@ {content.link}
+                    </a>
                   </div>
                 ))}
               </div>

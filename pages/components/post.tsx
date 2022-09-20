@@ -19,7 +19,7 @@ const Post: NextPage<PostProps> = ({ post }) => {
     <Link href={`/blog/${post?.category}/${post?.subCategory}/${post?.slug}`}>
       <div className="flex justify-between items-center w-full h-32 py-4 px-2 hover:bg-zinc-300 dark:hover:bg-zinc-800">
         <div>
-          <h2 className="font-extrabold text-xl cursor-pointer">
+          <h2 className="font-extrabold text-xl cursor-pointer truncate">
             {post?.title}
           </h2>
           <p className="font-thin text-xs mt-3 cursor-pointer">

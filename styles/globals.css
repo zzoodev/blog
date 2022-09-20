@@ -18,12 +18,25 @@
   @apply bg-gray-200 dark:bg-zinc-800 rounded-md p-5 overflow-y-auto;
 }
 .html pre code {
-  @apply text-gray-800 dark:text-zinc-200  text-sm leading-6;
+  @apply text-gray-800 dark:text-zinc-200  text-sm;
+  line-height: 1px !important;
 }
 .html ol {
-  @apply list-disc ml-5;
+  @apply list-decimal ml-4;
+}
+.html ul {
+  @apply list-disc ml-4;
+}
+.html h1 {
+  font-weight: bold;
+}
+.html h2 {
+  font-weight: bold;
+  margin-top: 50px !important;
 }
 .html p {
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 100 !important;
 }
 .html img {

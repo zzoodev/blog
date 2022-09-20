@@ -28,9 +28,9 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[78%] w-full h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
-          <h2 className="text-3xl font-black mb-6">{data?.title}</h2>
+          <h1 className="text-2xl font-black mb-7">{data?.title}</h1>
           <div
-            className="html text-[16px]"
+            className="html text-[16px] mb-16"
             dangerouslySetInnerHTML={{ __html: content }}
           ></div>
         </main>
@@ -42,6 +42,7 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
 export async function getStaticPaths() {
   const posts: any = readdirSync(`./posts`).map((item) => {
     const post = readFileSync(`./posts/${item}`, "utf-8");
+
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });

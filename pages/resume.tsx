@@ -60,6 +60,7 @@ const Resume: NextPage = () => {
                       href={content.link}
                       className="text-xs text-cyan-500 mt-2 block"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       링크@ {content.link}
                     </a>

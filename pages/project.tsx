@@ -11,14 +11,14 @@ const Project: NextPage = () => {
   return (
     <Layout customMeta={customMeta}>
       <h1 className="mt-5 font-black text-3xl ml-3">Projects</h1>
-      <h2 className="mt-3 font-light text-sm ml-3">
+      <h2 className="mt-3 dark:font-light font-medium text-sm ml-3">
         끄적끄적 만든것들을 기록합니다.
       </h2>
       <div className="grid grid-cols-1 mobile:grid-cols-2 w-full gap-4 gap-y-8 p-4  mt-4">
         {projects.map((project, i) => (
           <Link key={i} href={project.url}>
             <a target="_blank">
-              <div className="relative border border-slate-700 w-full aspect-video rounded-md overflow-hidden cursor-pointer group">
+              <div className="relative border dark:border-slate-700 border-slate-300 w-full aspect-video rounded-md overflow-hidden cursor-pointer group">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -30,7 +30,7 @@ const Project: NextPage = () => {
               </div>
               <div className="mt-2">
                 <h2 className="font-bold text-lg">{project.title}</h2>
-                <h3 className="text-[12px] text-slate-200 mt-1">
+                <h3 className="text-[12px] dark:text-slate-200 mt-1">
                   {project.intro}
                 </h3>
               </div>
@@ -38,7 +38,7 @@ const Project: NextPage = () => {
                 {project.stacks.map((stack, i) => (
                   <span
                     key={i}
-                    className="text-[10px] text-slate-300 font-light md:text-xs"
+                    className="text-[10px] dark:text-slate-300 font-light md:text-xs"
                   >
                     {stack},&nbsp;
                   </span>

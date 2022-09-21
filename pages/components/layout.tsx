@@ -41,10 +41,10 @@ const Layout: NextPage<LayoutProps> = ({ children, customMeta }) => {
   return (
     <div
       id="layout"
-      className="relative max-w-2xl w-full m-auto flex flex-col items-center pt-12"
+      className="relative max-w-2xl w-full m-auto flex flex-col items-center pt-12 border-x border-x-slate-200"
     >
       {max678 ? <SideNav /> : null}
-      <header className="fixed top-0 m-auto max-w-2xl w-full h-12 bg-white dark:bg-[#18181B] z-30">
+      <header className="fixed top-0 m-auto max-w-2xl w-full h-12 bg-[#18181B] z-3">
         <nav className="flex items-center h-full">
           <svg
             id="burgerBtn"
@@ -62,7 +62,7 @@ const Layout: NextPage<LayoutProps> = ({ children, customMeta }) => {
             <div
               key={i}
               className={cls(
-                router.pathname === link.path ? "text-cyan-400" : "",
+                router.pathname === link.path ? "text-cyan-400" : "text-white",
                 "flex justify-center items-center h-full font-thin text-[14px] uppercase px-4"
               )}
             >

@@ -17,7 +17,7 @@ interface PostProps {
 const Post: NextPage<PostProps> = ({ post }) => {
   return (
     <Link href={`/blog/${post?.category}/${post?.subCategory}/${post?.slug}`}>
-      <div className="flex justify-between items-center w-full h-32 py-4 px-2 hover:bg-zinc-300 dark:hover:bg-zinc-800">
+      <div className="flex justify-between items-center w-full h-32 py-4 px-2 hover:bg-zinc-100 dark:hover:bg-zinc-800">
         <div>
           <h2 className="font-extrabold text-xl cursor-pointer truncate">
             {post?.title}

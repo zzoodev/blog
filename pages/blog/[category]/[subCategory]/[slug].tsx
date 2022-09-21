@@ -28,7 +28,7 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
       <div className="flex w-full justify-end">
         <SideNav />
         <main className="base:w-[78%] w-full h-max p-6 text-zinc-900 dark:text-zinc-50 leading-7">
-          <h1 className="text-2xl font-black mb-7">{data?.title}</h1>
+          <h1 className="text-2xl font-black">{data?.title}</h1>
           <div
             className="html text-[16px] mb-16"
             dangerouslySetInnerHTML={{ __html: content }}
@@ -42,7 +42,6 @@ const Category: NextPage<PostProps> = ({ data, content, customMeta }) => {
 export async function getStaticPaths() {
   const posts: any = readdirSync(`./posts`).map((item) => {
     const post = readFileSync(`./posts/${item}`, "utf-8");
-
     const [slug, _] = item.split(".");
     return { ...matter(post).data, slug };
   });
@@ -63,7 +62,6 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data, content } = matter.read(`./posts/${params?.slug}.md`);
-
   const { value } = await unified()
     .use(remarkParse)
     .use(remarkHtml)

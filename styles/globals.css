@@ -12,36 +12,34 @@
 }
 
 .html {
-  @apply flex flex-col space-y-5;
+  @apply flex flex-col;
 }
 .html pre {
-  @apply bg-gray-200 dark:bg-zinc-800 rounded-md p-5 overflow-y-auto;
+  @apply bg-gray-200 dark:bg-zinc-800 rounded-md p-5 overflow-y-auto mt-3;
 }
 .html pre code {
-  @apply text-gray-800 dark:text-zinc-200  text-sm;
+  @apply text-gray-800 dark:text-zinc-200 text-sm mt-4;
   line-height: 1px !important;
 }
 .html ol {
-  @apply list-decimal ml-4;
+  @apply list-decimal ml-4 mt-2;
 }
 .html ul {
-  @apply list-disc ml-4;
+  @apply list-disc ml-4 mt-2;
 }
 .html h1 {
-  font-weight: bold;
+  @apply font-bold mt-8;
 }
 .html h2 {
-  font-weight: bold;
-  margin-top: 50px !important;
+  @apply font-bold mt-6;
 }
 .html p {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 100 !important;
+  @apply text-sm leading-6 font-extralight mt-4;
 }
 .html img {
-  width: 100%;
+  @apply w-full object-cover rounded-sm;
   aspect-ratio: inherit;
-  object-fit: cover;
-  border-radius: 4px;
+}
+.html strong {
+  @apply font-bold text-yellow-400 mt-4;
 }

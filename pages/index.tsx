@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = (context) => {
 
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(aranged)),
+      posts: JSON.parse(JSON.stringify(aranged)).reverse(),
     },
   };
 };

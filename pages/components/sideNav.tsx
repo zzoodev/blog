@@ -29,7 +29,7 @@ const SideNav: NextPage = () => {
   return (
     <aside
       className={cls(
-        "fixed base:left-[calc(50%-336px)]  base:top-12 top-0 w-[130px]  min-h-screen h-max border-x pt-2 space-y-2 px-6 z-50 transition-all bg-white text-[#10172A] dark:text-[#CBD5E1] dark:bg-[#18181B]",
+        "fixed base:left-[calc(50%-336px)]  base:top-12 top-0 w-[130px]  min-h-screen h-max border-x pt-2 space-y-2 px-6 z-50 transition-all bg-white text-[#10172A] dark:text-[#CBD5E1] dark:bg-[#18181B] dark:border-l-0  dark:border-zinc-600",
         max678 && isBurger ? "left-0 pt-8" : "-left-[200px]"
       )}
     >

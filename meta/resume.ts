@@ -35,7 +35,7 @@ export const resume: Resume = {
           description: "전자책 플랫폼",
           do: [
             "수학, 과학 교육 컨텐츠 퍼블리싱",
-            "토글, 선잇기, 드래그 기능 개발",
+            "인터랙션(토글, 드래그앤드랍 등) 기능 개발",
           ],
           tech: ["javascript", "css", "html"],
           link: "https://un.douclass.easypub.kr/#SCI_42",
@@ -44,9 +44,8 @@ export const resume: Resume = {
           title: "K-Pub",
           description: "전자책 플랫폼",
           do: [
-            "프로젝트 리더",
-            "메인페이지 개발",
-            "E-book 디테일 페이지 개발",
+            "개발 구조 세팅",
+            "프론트엔드 개발",
             "API 연동 담당",
           ],
           tech: ["React", "react-hook-form", "react-router", "recoil"],

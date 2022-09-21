@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: "K-PUB",
     intro: "전자책 플랫폼",
     description:
-      "회사에서 R&D 사업으로 플랫폼 사이트를 만드는데 리액트 경험자가 저밖에 없어 프론트엔드 개발을 도맡아 했습니다.",
+      "회사에서 R&D 사업으로 플랫폼 사이트를 만드는데 리액트 경험자가 저밖에 없어 프론트엔드 개발을 리드했습니다.",
     stacks: [
       "React",
       "Styled-component",

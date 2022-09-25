@@ -22,13 +22,16 @@
   line-height: 1px !important;
 }
 .html ol {
-  @apply list-decimal ml-4 mt-2;
+  @apply list-decimal ml-4 mt-4 text-base;
 }
 .html ul {
-  @apply list-disc ml-4 mt-2;
+  @apply list-disc ml-4 mt-4 text-base;
 }
 .html h1 {
   @apply font-bold mt-8;
+}
+.html li {
+  @apply mb-2;
 }
 .html h2 {
   @apply font-bold mt-6;
@@ -41,5 +44,5 @@
   aspect-ratio: inherit;
 }
 .html strong {
-  @apply font-bold text-yellow-400 mt-4;
+  @apply font-bold text-yellow-400 mt-4 block;
 }

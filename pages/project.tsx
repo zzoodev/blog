@@ -12,7 +12,7 @@ const Project: NextPage = () => {
     <Layout customMeta={customMeta}>
       <h1 className="mt-5 font-black text-3xl ml-3">Projects</h1>
       <h2 className="mt-3 dark:font-light font-medium text-sm ml-3">
-        끄적끄적 만든것들을 기록합니다.
+        끄적끄적 만든것들을 기록합니다. 최근 프로젝트 정렬순입니다.
       </h2>
       <div className="grid grid-cols-1 mobile:grid-cols-2 w-full gap-4 gap-y-8 p-4  mt-4">
         {projects.map((project, i) => (

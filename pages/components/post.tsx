@@ -18,8 +18,8 @@ const Post: NextPage<PostProps> = ({ post }) => {
   return (
     <Link href={`/blog/${post?.category}/${post?.subCategory}/${post?.slug}`}>
       <div className="flex justify-between items-center w-full h-32 py-4 px-2 hover:bg-zinc-100 dark:hover:bg-zinc-800">
-        <div>
-          <h2 className="font-extrabold text-xl cursor-pointer truncate">
+        <div className="flex flex-col w-full">
+          <h2 className="font-extrabold text-xl cursor-pointer truncate w-full">
             {post?.title}
           </h2>
           <p className="font-thin text-xs mt-3 cursor-pointer">
@@ -29,10 +29,11 @@ const Post: NextPage<PostProps> = ({ post }) => {
             {post?.date?.slice(0, 10)}
           </span>
         </div>
+
         {post?.thumnail ? (
           <img
             src={post?.thumnail}
-            className="h-full aspect-square rounded-md object-cover ml-4"
+            className="h-full base:block aspect-square rounded-md object-cover ml-4 hidden"
             alt=""
           />
         ) : null}
